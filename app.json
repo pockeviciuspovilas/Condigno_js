@@ -1,0 +1,12 @@
+{
+  "name": "Condigno_js",
+  "displayName": "Condigno_js",
+  "expo": {
+    "name": "Condigno_js",
+    "slug": "Condigno_js",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
