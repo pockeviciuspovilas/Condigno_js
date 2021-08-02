@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { setStatusBarHidden, StatusBar } from "expo-status-bar";
+import React from "react";
+import { ImageBackground, View } from "react-native";
+import Swipper from "./components/Swipper";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    setStatusBarHidden(true),
+    (
+      <ImageBackground
+        source={require("./misc/images/background.jpg")}
+        style={{ width: null, height: null }}
+      >
+        <StatusBar style="light" />
+        <View>
+          <Swipper />
+        </View>
+      </ImageBackground>
+    )
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

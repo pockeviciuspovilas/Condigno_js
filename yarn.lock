@@ -2604,6 +2604,11 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
+base-64@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/base-64/-/base-64-0.1.0.tgz#780a99c84e7d600260361511c4877613bf24f6bb"
+  integrity sha1-eAqZyE59YAJgNhURxId2E78k9rs=
+
 base64-js@^1.1.2, base64-js@^1.2.3, base64-js@^1.3.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
@@ -3621,6 +3626,14 @@ expo-asset@~8.2.1:
     md5-file "^3.2.3"
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
+
+expo-av@~8.7.0:
+  version "8.7.0"
+  resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-8.7.0.tgz#01030256dc75cebd5d02060393ba0ad36c10a7f8"
+  integrity sha512-tYw0z//UZm9THicOsu4w0A7Olq/JauTy7kcBR15Fhyppd9wd8Jtq7QYNtf2igd1R+byS2L0AGwE0nazlbQR+Qw==
+  dependencies:
+    lodash "^4.17.15"
+    nullthrows "^1.1.0"
 
 expo-constants@~9.3.0, expo-constants@~9.3.3:
   version "9.3.5"
@@ -6736,6 +6749,14 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
+react-native-fs@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/react-native-fs/-/react-native-fs-2.17.0.tgz#8bd7d57d5f3325ae2f511e3fb2391ca5802d7a88"
+  integrity sha512-SmibqNWTt6uE+Yki5GkmytoCUTWm73GpFNMEAy12bD1PQ70PSH4XbIf1WUMNJzjctlcfEymQLKsk5Cyi6Y0Jrg==
+  dependencies:
+    base-64 "^0.1.0"
+    utf8 "^3.0.0"
+
 react-native-gesture-handler@~1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.8.0.tgz#18f61f51da50320f938957b0ee79bc58f47449dc"
@@ -6762,6 +6783,16 @@ react-native-screens@~2.15.0:
   version "2.15.2"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.15.2.tgz#a449700e895b462937211ec72ed6f09652758f06"
   integrity sha512-CagNf2APXkVoRlF3Mugr264FbKbrBg9eXUkqhIPVeZB8EsdS8XPrnt99yj/pzmT+yJMBY0dGrjXT8+68WYh6YQ==
+
+react-native-sound-player@^0.10.6:
+  version "0.10.6"
+  resolved "https://registry.yarnpkg.com/react-native-sound-player/-/react-native-sound-player-0.10.6.tgz#cba4fc6b079bc9f92e64b77308eedbb04ab07de6"
+  integrity sha512-gK3a5d5iLBLqOQREVlGuTvHk8Qorx/HySPH1ZFpKhHExhXN6r/P036pYAGeUTSmhxwdJ5vnjsFE6Qq1BM9TRSA==
+
+react-native-swipe-gestures@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-swipe-gestures/-/react-native-swipe-gestures-1.0.5.tgz#a172cb0f3e7478ccd681fd36b8bfbcdd098bde7c"
+  integrity sha512-Ns7Bn9H/Tyw278+5SQx9oAblDZ7JixyzeOczcBK8dipQk2pD7Djkcfnf1nB/8RErAmMLL9iXgW0QHqiII8AhKw==
 
 react-native-unimodules@~0.12.0:
   version "0.12.0"
@@ -8075,6 +8106,11 @@ use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
+
+utf8@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/utf8/-/utf8-3.0.0.tgz#f052eed1364d696e769ef058b183df88c87f69d1"
+  integrity sha512-E8VjFIQ/TyQgp+TZfS6l8yp/xWppSAHzidGiRrqe4bK4XP9pTRyKFgGJpO3SN7zdX4DeomTrwaseCHovfpFcqQ==
 
 utif@^2.0.1:
   version "2.0.1"

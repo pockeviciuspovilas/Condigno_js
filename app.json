@@ -1,12 +1,29 @@
 {
-  "name": "Condigno_js",
-  "displayName": "Condigno_js",
+  "name": "Kondigno",
+  "displayName": "Kondigno",
+  "privacy": "public",
   "expo": {
-    "name": "Condigno_js",
-    "slug": "Condigno_js",
+    "privacy": "public",
+    "name": "Kondigno",
+    "slug": "Kondigno",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"],
+    "androidNavigationBar": {
+      "visible": "sticky-immersive"
+    },
+    "orientation": "landscape",
+    "ios": {
+      "bundleIdentifier": "com.condigno.condigno",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./misc/images/logo.png",
+        "backgroundImage": "./misc/images/logo.png"
+      },
+      "package": "com.condigno.condigno",
+      "versionCode": 2
+    },
+    "description": ""
   }
 }
