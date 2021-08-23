@@ -263,7 +263,7 @@ class Swipper extends Component {
     this.setState({ isTutorial: false });
     this.setState({ isInitialStory: false });
 
-    console.log("start");
+    console.log("START");
 
     this.setState({ myText: "story" });
     this.ambientSound.setVolumeAsync(MIN_AUDIO);
