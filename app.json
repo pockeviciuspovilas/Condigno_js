@@ -6,6 +6,7 @@
     "privacy": "public",
     "name": "Kondigno",
     "slug": "Kondigno",
+    "icon": "./misc/images/logo.png",
     "version": "1.0.0",
     "assetBundlePatterns": ["**/*"],
     "androidNavigationBar": {
@@ -14,7 +15,8 @@
     "orientation": "landscape",
     "ios": {
       "bundleIdentifier": "com.condigno.condigno",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.1",
+      "icon": "./misc/images/logo.png"
     },
     "android": {
       "adaptiveIcon": {

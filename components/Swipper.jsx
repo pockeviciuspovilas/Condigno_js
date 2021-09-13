@@ -76,21 +76,21 @@ class Swipper extends Component {
   addAudioToArray() {
     let arr = [];
     arr = [];
-    for (let i = 1; i <= 60; i++) {
+    for (let i = 1; i <= 100; i++) {
       arr.push(i);
     }
     this.setState({ oneList: arr.sort(() => Math.random() - 0.5) });
 
     //2
     arr = [];
-    for (let i = 1; i <= 62; i++) {
+    for (let i = 1; i <= 100; i++) {
       arr.push(i);
     }
     this.setState({ twoList: arr.sort(() => Math.random() - 0.5) });
 
     //3
     arr = [];
-    for (let i = 1; i <= 57; i++) {
+    for (let i = 1; i <= 100; i++) {
       arr.push(i);
     }
     this.setState({ threeList: arr.sort(() => Math.random() - 0.5) });
