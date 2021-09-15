@@ -193,6 +193,10 @@ class Swipper extends Component {
       }
     }
   }
+
+
+//Jeigu Array.length === 100; index = 1;
+
   async onSwipeDown() {
     if (this.state.isQuestionPlaying === false) {
       this.setState({ myText: "down" });
