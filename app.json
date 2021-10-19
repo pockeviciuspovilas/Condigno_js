@@ -3,9 +3,10 @@
   "displayName": "Kondigno",
   "privacy": "public",
   "expo": {
+    "owner": "ppockevicius",
     "privacy": "public",
-    "name": "Kondigno",
-    "slug": "Kondigno",
+    "name": "Kondigno_dev_demoAuth",
+    "slug": "kondigno_dev_demoauth",
     "icon": "./misc/images/logo.png",
     "version": "1.0.0",
     "assetBundlePatterns": ["**/*"],

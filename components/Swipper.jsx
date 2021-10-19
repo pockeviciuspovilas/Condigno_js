@@ -62,7 +62,7 @@ class Swipper extends Component {
       twoArrIndex: 0,
       threeArrIndex: 0,
       questionsCount: 0,
-      lastAudioType: null,
+      lastAudioType: "story",
       lastAudioPointSize: 0,
       lastAudioIndex: 0,
       isSoundPlaying: false,
@@ -191,21 +191,46 @@ class Swipper extends Component {
           this.setState({ isQuestionPlaying: true });
         }
       }
+      if (this.state.lastAudioType === "story") {
+        console.log("story, index: " + this.state.storyListIndex);
+        console.log(audios.story);
+        await this.soundObject.loadAsync(
+          audios.story[this.state.storyListIndex - 1].audio
+        );
+        this.soundObject.setOnPlaybackStatusUpdate(async (status) => {
+          if (status.didJustFinish === true) {
+            this.setState({ isSoundPlaying: false });
+            this.setState({ isQuestionPlaying: false });
+            this.ambientSound.setVolumeAsync(MAX_AUDIO);
+            await this.soundObject.unloadAsync();
+          } else {
+            return;
+          }
+        });
+        await this.soundObject.playAsync();
+        this.ambientSound.setVolumeAsync(MIN_AUDIO);
+        this.setState({ isSoundPlaying: true });
+        this.setState({ isQuestionPlaying: true });
+      }
     }
   }
 
-
-//Jeigu Array.length === 100; index = 1;
+  //Jeigu Array.length === 100; index = 1;
 
   async onSwipeDown() {
     if (this.state.isQuestionPlaying === false) {
       this.setState({ myText: "down" });
       let index = this.state.twoArrIndex;
       this.ambientSound.setVolumeAsync(MIN_AUDIO);
-      await this.soundObject.unloadAsync();
-      await this.soundObject.loadAsync(
-        audios.twoPoint[this.state.twoList[index]].audio
-      );
+
+      await this.soundObject
+        .unloadAsync()
+        .then(() =>
+          this.soundObject.loadAsync(
+            audios.twoPoint[this.state.twoList[index]].audio
+          )
+        );
+
       this.soundObject.setOnPlaybackStatusUpdate(async (status) => {
         if (status.didJustFinish === true) {
           this.ambientSound.setVolumeAsync(MAX_AUDIO);
@@ -271,8 +296,10 @@ class Swipper extends Component {
 
     this.setState({ myText: "story" });
     this.ambientSound.setVolumeAsync(MIN_AUDIO);
-    await this.soundObject.unloadAsync();
-    await this.soundObject.loadAsync(audios.story[1].audio);
+
+    await this.soundObject
+      .unloadAsync()
+      .then(() => this.soundObject.loadAsync(audios.story[1].audio));
 
     this.soundObject.setOnPlaybackStatusUpdate(async (status) => {
       if (status.didJustFinish === true) {
@@ -292,8 +319,10 @@ class Swipper extends Component {
       this.setState({ myText: "story" });
       this.ambientSound.setVolumeAsync(MIN_AUDIO);
       let index = this.state.storyListIndex;
-      await this.soundObject.unloadAsync();
-      await this.soundObject.loadAsync(audios.story[index].audio);
+
+      await this.soundObject
+        .unloadAsync()
+        .then(() => this.soundObject.loadAsync(audios.story[index].audio));
 
       this.soundObject.setOnPlaybackStatusUpdate(async (status) => {
         if (status.didJustFinish === true) {
@@ -307,6 +336,12 @@ class Swipper extends Component {
       this.setState({ isSoundPlaying: true });
       this.setState({ isQuestionPlaying: true });
       this.setState({ storyListIndex: index + 1 });
+      this.setState({ lastAudioType: "story" });
+    } else {
+      this.ambientSound.setVolumeAsync(MAX_AUDIO);
+      this.setState({ isSoundPlaying: false });
+      this.setState({ isQuestionPlaying: false });
+      await this.soundObject.unloadAsync();
     }
   }
 
@@ -316,10 +351,13 @@ class Swipper extends Component {
       this.ambientSound.setVolumeAsync(MIN_AUDIO);
       let index = this.state.threeArrIndex;
 
-      await this.soundObject.unloadAsync();
-      await this.soundObject.loadAsync(
-        audios.threePoint[this.state.threeList[index]].audio
-      );
+      await this.soundObject
+        .unloadAsync()
+        .then(() =>
+          this.soundObject.loadAsync(
+            audios.threePoint[this.state.threeList[index]].audio
+          )
+        );
 
       this.soundObject.setOnPlaybackStatusUpdate(async (status) => {
         if (status.didJustFinish === true) {
@@ -345,10 +383,15 @@ class Swipper extends Component {
       this.setState({ myText: "right" });
       this.ambientSound.setVolumeAsync(MIN_AUDIO);
       let index = this.state.oneArrIndex;
-      await this.soundObject.unloadAsync();
-      await this.soundObject.loadAsync(
-        audios.onePoint[this.state.oneList[index]].audio
-      );
+
+      await this.soundObject
+        .unloadAsync()
+        .then(() =>
+          this.soundObject.loadAsync(
+            audios.onePoint[this.state.oneList[index]].audio
+          )
+        );
+
       this.soundObject.setOnPlaybackStatusUpdate(async (status) => {
         if (status.didJustFinish === true) {
           this.setState({ isSoundPlaying: false });
@@ -386,8 +429,9 @@ class Swipper extends Component {
     }
   }
 
-  async componentDidMount() {
+  async UNSAFE_componentWillMount() {
     console.log("??");
+    await Audio.setAudioModeAsync({ playsInSilentModeIOS: true });
     if (this.state.isAmbientLoaded === false) {
       this.PlayAmbient();
     }
